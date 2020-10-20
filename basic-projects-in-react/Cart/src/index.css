@@ -41,6 +41,13 @@ img {
   width: 100%;
   display: block;
 }
+.loadings{
+  height:100px;
+  width: 100px;
+  text-align: center;
+  display:inline-block;
+
+}
 h1,
 h2,
 h3,
