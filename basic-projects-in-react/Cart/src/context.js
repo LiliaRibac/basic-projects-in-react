@@ -13,8 +13,24 @@ const initialState = {
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  // clear cart
   const clearCart = () => {
     dispatch({ type: 'CLEAR_CART' });
+  };
+
+  // remove item
+  const remove = (id) => {
+    dispatch({ type: 'REMOVE', payload: id });
+  };
+
+  // increase item
+  const increase = (id) => {
+    dispatch({ type: 'INCREASE', payload: id });
+  };
+
+  // decrease item
+  const decrease = (id) => {
+    dispatch({ type: 'DECREASE', payload: id });
   };
 
   return (
@@ -22,6 +38,9 @@ const AppProvider = ({ children }) => {
       value={{
         ...state,
         clearCart,
+        remove,
+        increase,
+        decrease,
       }}
     >
       {children}
