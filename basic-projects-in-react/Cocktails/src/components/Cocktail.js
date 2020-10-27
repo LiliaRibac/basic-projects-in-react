@@ -5,7 +5,6 @@ const Cocktail = () => {
   return (
     <div>
       <h2>cocktail component....</h2>
-      <h2>Test 1</h2>
     </div>
   );
 };
