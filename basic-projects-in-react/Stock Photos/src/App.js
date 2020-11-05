@@ -27,6 +27,17 @@ function App() {
     fetchImages();
   }, []);
 
+  useEffect(() => {
+    const event = window.addEventListener('scroll', () => {
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.scrollHeight - 2
+      ) {
+        console.log('it work');
+      }
+    });
+    return () => window.removeEventListener('scroll', event);
+  }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('hello');
@@ -44,7 +55,6 @@ function App() {
       <section className="photos">
         <div className="photos-center">
           {photos.map((image) => {
-            console.log(image);
             return <Photo key={image.id} {...image} />;
           })}
         </div>
